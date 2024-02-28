@@ -37,11 +37,27 @@ document.getElementById("truckCardsContainer").innerHTML = "";
     ${
         trucks[truckKey].preTrip
             ? `<h2>Pre Trip</h2>
-            <ul>
-            ${Object.values(trucks[truckKey].preTrip)
-                .map((preTrip) => `<li>${preTrip}</li>`)
-                .join("")}
-            </ul>`
+            
+            ${
+                Object.keys(trucks[truckKey].preTrip)
+                .filter((preTripKey) => {return preTripKey != "lights"})
+                .map((preTripKey) => 
+                    `<strong>${trucks[truckKey].preTrip[preTripKey].name}</strong>` +
+                    `${
+                        trucks[truckKey].preTrip[preTripKey].images
+                        ?  trucks[truckKey].preTrip[preTripKey].images.map((image) => `<img src="${image}">`).join("")
+                        : ""
+                    }` +
+                    Object.keys(trucks[truckKey].preTrip[preTripKey])
+                    .filter((preTripKey) => {return preTripKey != "name" && preTripKey != "images"})
+                    .map((preTripItemKey) =>
+                        `${trucks[truckKey].preTrip[preTripKey][preTripItemKey]}`)
+                    .join("|")
+                    )
+                    
+                .join("<br>")
+            }
+            `
             : ""
     }
     `

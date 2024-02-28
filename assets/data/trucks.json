@@ -4,7 +4,7 @@
       "name": "801",
       "images": ["img/trucks/801/801main.png"],
       "usedFor": ["glass", "food waste"],
-      "description": "Truck 1 description",
+      "description": "a big truck with a side tipper and tail gate + raise bed to dump",
       "preTrip": {
         "oil": {
           "name": "Oil",
@@ -100,9 +100,19 @@
       }
       
     },
-    "Box3": {
+    "box3": {
       "name": "Box 3",
-      "images": ["img/trucks/801/801main.png"]
+      "images": ["img/trucks/801/801main.png"],
+      "usedFor": ["utility"],
+      "description": "a box truck, shorter than box 4, unfolding liftgate from lower",
+      "quirks": {
+        "lockedIgnition": {
+          "name": "Can't turn key",
+          "tags": ["operation"],
+          "explanation": "If you cannot turn the key, jerk the steering wheel rapidly back and forth while turning the key.",
+          "images": ["img/trucks/box3/box3lockedIgnition.png"]
+        }
+      }
     }
   }
 }

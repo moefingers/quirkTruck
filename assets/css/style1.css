@@ -9,13 +9,18 @@
 }
 
 .truckCard {
+    display: inline-block;
     border: 1px solid black;
-    width: auto;
+    width:20%;
     padding: 10px;
     margin-right: 10px;
 }
 .truckCard:last-child {
     margin-right: 0;
+}
+
+.expanded {
+    width:100%;
 }
 
 .badge {

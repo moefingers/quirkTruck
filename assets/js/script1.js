@@ -5,6 +5,18 @@ let page = {
     expandedTruck: "",
 };
 
+const expandAnimation = [
+
+    {width: "20%",easing: "ease-out"},
+    {width: "100%"}
+]
+
+const collapseAnimation = [
+    {width: "100%"},
+    {width: "20%",easing: "ease-out"}
+
+]
+
 function renderCards(truckKeyArray) {
 document.getElementById("truckCardsContainer").innerHTML = "";
   truckKeyArray.forEach((truckKey) => {
@@ -19,7 +31,6 @@ document.getElementById("truckCardsContainer").innerHTML = "";
         <h1>${trucks[truckKey].name}</h1>
         ${trucks[truckKey].images ? trucks[truckKey].images.map((image) => `<img src="${image}">`).join("") : ""}
         <p>${trucks[truckKey].description}</p>
-        <p>Used For</p>
         <ul>
         ${
         trucks[truckKey].usedFor
@@ -112,16 +123,15 @@ document.getElementById("truckCardsContainer").innerHTML = "";
                 Object.keys(trucks[truckKey].quirks)
                 .map((quirksKey) => 
                     `<strong>${trucks[truckKey].quirks[quirksKey].name}</strong>` +
+
                     `${
                         trucks[truckKey].quirks[quirksKey].images
                         ?  trucks[truckKey].quirks[quirksKey].images.map((image) => `<img src="${image}">`).join("")
                         : ""
                     }` +
-                    Object.keys(trucks[truckKey].quirks[quirksKey])
-                    .filter((quirksKey) => {return quirksKey != "name" && quirksKey != "images" && quirksKey != "tags" })
-                    .map((quirksItemKey) =>
-                        `${trucks[truckKey].quirks[quirksKey][quirksItemKey]}`)
-                    .join("|")  + "<br>" +
+
+                    `${trucks[truckKey].quirks[quirksKey].explanation}` +
+
                     `${trucks[truckKey].quirks[quirksKey].tags.includes("operation") ? "<li class='quirkTag'>Affects <strong>operation</strong>.</li>" : ""}` +
                     `${trucks[truckKey].quirks[quirksKey].tags.includes("prevention") ? "<li class='quirkTag'>Prevents <strong>damage</strong> to equipment.</li>" : ""}` +
                     `${trucks[truckKey].quirks[quirksKey].tags.includes("safety") ? "<li class='quirkTag'><strong>Safety Warning</strong></li>" : ""}`
@@ -145,17 +155,21 @@ document.getElementById("truckCardsContainer").innerHTML = "";
         if (page.expandedTruck == truckKey) { //already expanded this truck, so collapse and remove status
             page.expandedTruck = ""
             document.getElementById(`truckCard${truckKey}`).classList.remove("expanded")
+            // document.getElementById(`truckCard${truckKey}`).animate(collapseAnimation, { duration: 1000})
             document.querySelector(`#truckCard${truckKey} .expandedContents`).classList.add("hidden")
             expandButton.textContent = "Expand"
             page.expandedTruck = ""
         } else if (page.expandedTruck != truckKey) { //if toggling different than self, expand
             if (page.expandedTruck != "") { // if different than self exists, collapse that one
                 document.getElementById(`truckCard${page.expandedTruck}`).classList.remove("expanded")
+                // document.getElementById(`truckCard${truckKey}`).animate(collapseAnimation, { duration: 1000})
                 document.querySelector(`#truckCard${page.expandedTruck} button`).textContent = "Expand"
                 document.querySelector(`#truckCard${page.expandedTruck} .expandedContents`).classList.add("hidden")
             } 
             // then expand this one
             document.getElementById(`truckCard${truckKey}`).classList.add("expanded")
+            // document.getElementById(`truckCard${truckKey}`).animate(expandAnimation, { duration: 1000})
+                
             expandButton.textContent = "Collapse"
             document.querySelector(`#truckCard${truckKey} .expandedContents`).classList.remove("hidden")
             page.expandedTruck = truckKey

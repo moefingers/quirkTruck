@@ -17,7 +17,7 @@ document.getElementById("truckCardsContainer").innerHTML = "";
     // card content
     truckCard.innerHTML = `
         <h1>${trucks[truckKey].name}</h1>
-        <img src="${trucks[truckKey].images[0]}">
+        ${trucks[truckKey].images ? trucks[truckKey].images.map((image) => `<img src="${image}">`).join("") : ""}
         <p>${trucks[truckKey].description}</p>
         <p>Used For</p>
         <ul>

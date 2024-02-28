@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#truckCardsContainer {
+    display: flex;
+}
+
+.truckCard {
+    border: 1px solid black;
+    width: auto;
+    padding: 10px;
+    margin-right: 10px;
+}
+.truckCard:last-child {
+    margin-right: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    margin-right: 5px;
+    border: 1px solid black;
+    padding: 2px;
+    background-color: lightgray;
+    border-radius: 10px
+}
+
+li:last-child {
+    margin-right: 0;
+}

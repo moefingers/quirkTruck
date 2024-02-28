@@ -1,0 +1,93 @@
+{
+  "trucks": {
+    "801": {
+      "name": "801",
+      "images": ["img/trucks/801/801main.png"],
+      "usedFor": ["glass", "food waste"],
+      "description": "Truck 1 description",
+      "preTrip": {
+        "oil": {
+          "images": "img/trucks/801/801oil.png",
+          "type": "69W-420",
+          "location": "description of location, where to fill if it's different than dipstick, and how to open",
+          "notes": "do not overfill"
+        },
+        "transmissionFluid": {
+          "images": ["img/trucks/801/801transmission.png"],
+          "type": "green monster brand, extra scary type",
+          "location": "description of location",
+          "notes": "must be checked when transmission system is at full operating temperature."
+        },
+        "coolant": {
+          "images": ["img/trucks/801/801coolant.png"],
+          "type": "RED YOU MUST USE RED PLEASE ",
+          "location": "description of location",
+          "notes": "make sure to taste it before filling"
+        },
+        "tires": {
+          "images": ["img/trucks/801/801tires.png"],
+          "ratedPressure": "100psi",
+          "notes": "The inner tires can be checked and filled from through the outers"
+        },
+        "lights": {
+          "frontLights": {
+            "images": ["img/trucks/801/801headLights.png"],
+            "notes": "high beam, low beam, running light, signals"
+          },
+          "topLights": {
+            "images": [
+              "img/trucks/801/801topLightsFront.png",
+              "img/trucks/801/801topLightsSides.png"
+            ],
+            "notes": "running lights on or near top on front back and sides"
+          },
+          "sideLights": {
+            "images": ["img/trucks/801/801sideLights.png"],
+            "notes": "type and location, IE side lights found on side"
+          },
+          "rearLights": {
+            "images": [
+              "img/trucks/801/801rearLights.png",
+              "img/trucks/801/801strobe.png"
+            ],
+            "notes": "brake, tail, reverse, signal, strobe"
+          }
+        },
+        "postTrip": {
+          "airTanks": {
+            "images": ["img/trucks/801/801airTanks.png"],
+            "notes": "on colder days, air tanks should be emptied at end of shift by turning valves.."
+          },
+          "CNG": {
+            "images": [
+              "img/trucks/801/801CNGfront.png",
+              "img/trucks/801/801CNGside.png"
+            ],
+            "notes": "This is a CNG truck. Please fill in front or on side."
+          }
+        },
+        "quirks": {
+          "holdBreath": {
+            "tags": ["operation"],
+            "explanation": "you have to hold your breath when you start it",
+            "images": ["img/trucks/801/801holdBreath.png"]
+          },
+          "tipper": {
+            "tags": ["operation", "prevention", "safety"],
+            "explanation": "Make sure the latch is fixed on the crossbar before raising the tipper all the way up or you'll end up with a bin in truck.",
+            "images": ["img/trucks/801/801tipperLatch.png"]
+          },
+          "magicWords": {
+            "tags": ["operation", "truckDamage", "safety"],
+            "explanation": "you have to say the magic words when using the PTO or it will explode",
+            "images": ["img/trucks/801/801magicWords.png"]
+          }
+        }
+      }
+    },
+    "Box3": {
+      "name": "Box 3",
+      "images": ["img/trucks/801/801main.png"]
+    }
+  }
+}

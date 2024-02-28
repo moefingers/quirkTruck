@@ -65,10 +65,12 @@
       },
       "postTrip": {
         "airTanks": {
+          "name": "Air Tanks",
           "images": ["img/trucks/801/801airTanks.png"],
           "notes": "on colder days, air tanks should be emptied at end of shift by turning valves.."
         },
         "CNG": {
+          "name": "CNG",
           "images": [
             "img/trucks/801/801CNGfront.png",
             "img/trucks/801/801CNGside.png"
@@ -78,16 +80,19 @@
       },
       "quirks": {
         "holdBreath": {
+          "name": "Hold Breath",
           "tags": ["operation"],
           "explanation": "you have to hold your breath when you start it",
           "images": ["img/trucks/801/801holdBreath.png"]
         },
         "tipper": {
+          "name": "Tipper",
           "tags": ["operation", "prevention", "safety"],
           "explanation": "Make sure the latch is fixed on the crossbar before raising the tipper all the way up or you'll end up with a bin in truck.",
           "images": ["img/trucks/801/801tipperLatch.png"]
         },
         "magicWords": {
+          "name": "Magic Words",
           "tags": ["operation", "truckDamage", "safety"],
           "explanation": "you have to say the magic words when using the PTO or it will explode",
           "images": ["img/trucks/801/801magicWords.png"]

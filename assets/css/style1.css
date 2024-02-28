@@ -4,6 +4,8 @@
 }
 #truckCardsContainer {
     display: flex;
+    flex-wrap: wrap;
+    
 }
 
 .truckCard {
@@ -16,20 +18,28 @@
     margin-right: 0;
 }
 
-li {
+.badge {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: inline;
     margin-right: 5px;
-    border: 1px solid black;
     padding: 2px;
     background-color: lightgray;
-    border-radius: 10px
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #fff;
+    background-color: #007bff;
+    font-weight: bold;
 }
 
-li:last-child {
+.badge:last-child {
     margin-right: 0;
+}
+
+.quirkTag {
+    font-style: italic;
+    color: darkred;
 }
 
 .hidden {

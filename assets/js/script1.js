@@ -1,4 +1,4 @@
-import trucksJSON from "/assets/data/trucks.json" assert { type: "json" };
+import trucksJSON from "../data/trucks.json" assert { type: "json" };
 const trucks = trucksJSON.trucks;
 
 let page = {

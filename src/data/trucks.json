@@ -105,6 +105,15 @@
       "images": ["img/trucks/801/801main.png"],
       "usedFor": ["utility"],
       "description": "a box truck, shorter than box 4, unfolding liftgate from lower",
+      "preTrip": {
+        "oil": {
+          "name": "Oil",
+          "images": ["img/trucks/801/801oil.png", "img/trucks/801/801oil2.png"],
+          "type": "69W-420",
+          "location": "description of location, where to fill if it's different than dipstick, and how to open",
+          "notes": "do not overfill"
+        }
+      },
       "quirks": {
         "lockedIgnition": {
           "name": "Can't turn key",

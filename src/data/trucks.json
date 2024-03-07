@@ -113,6 +113,20 @@
           "images": ["img/trucks/box3/box3lockedIgnition.png"]
         }
       }
+    },
+    "devestator": {
+      "name": "Devestator",
+      "images": ["img/trucks/devestator/devestatormain.png"],
+      "usedFor": ["devestation"],
+      "description": "Coming for you and yo mama.",
+      "quirks": {
+        "destruction": {
+          "name": "Pure Destruction",
+          "tags": ["operation", "safety", "prevention"],
+          "explanation": "If you're not careful, then you'll get destroyed. This thing is not safe.",
+          "images": ["img/trucks/devestator/destruction1.png"]
+        }
+      }
     }
   }
 }

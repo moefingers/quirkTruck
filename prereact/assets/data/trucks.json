@@ -1,0 +1,132 @@
+{
+  "trucks": {
+    "801": {
+      "name": "801",
+      "images": ["img/trucks/801/801main.png"],
+      "usedFor": ["glass", "food waste"],
+      "description": "a big truck with a side tipper and tail gate + raise bed to dump",
+      "preTrip": {
+        "oil": {
+          "name": "Oil",
+          "images": ["img/trucks/801/801oil.png", "img/trucks/801/801oil2.png"],
+          "type": "69W-420",
+          "location": "description of location, where to fill if it's different than dipstick, and how to open",
+          "notes": "do not overfill"
+        },
+        "transmissionFluid": {
+          "name": "Transmission Fluid",
+          "images": ["img/trucks/801/801transmission.png"],
+          "type": "green monster brand, extra scary type",
+          "location": "description of location",
+          "notes": "must be checked when transmission system is at full operating temperature."
+        },
+        "coolant": {
+          "name": "Coolant",
+          "images": ["img/trucks/801/801coolant.png"],
+          "type": "RED YOU MUST USE RED PLEASE ",
+          "location": "description of location",
+          "notes": "make sure to taste it before filling"
+        },
+        "tires": {
+          "name": "Tires",
+          "images": ["img/trucks/801/801tires.png"],
+          "ratedPressure": "100psi",
+          "notes": "The inner tires can be checked and filled from through the outers"
+        },
+        "lights": {
+          "name": "Lights",
+          "frontLights": {
+            "name": "Front Lights",
+            "images": ["img/trucks/801/801headLights.png"],
+            "notes": "high beam, low beam, running light, signals"
+          },
+          "topLights": {
+            "name": "Top Lights",
+            "images": [
+              "img/trucks/801/801topLightsFront.png",
+              "img/trucks/801/801topLightsSides.png"
+            ],
+            "notes": "running lights on or near top on front back and sides"
+          },
+          "sideLights": {
+            "name": "Side Lights",
+            "images": ["img/trucks/801/801sideLights.png"],
+            "notes": "type and location, IE side lights found on side"
+          },
+          "rearLights": {
+            "name": "Rear Lights",
+            "images": [
+              "img/trucks/801/801rearLights.png",
+              "img/trucks/801/801strobe.png"
+            ],
+            "notes": "brake, tail, reverse, signal, strobe"
+          }
+        }
+      },
+      "postTrip": {
+        "airTanks": {
+          "name": "Air Tanks",
+          "images": ["img/trucks/801/801airTanks.png"],
+          "notes": "on colder days, air tanks should be emptied at end of shift by turning valves.."
+        },
+        "CNG": {
+          "name": "CNG",
+          "images": [
+            "img/trucks/801/801CNGfront.png",
+            "img/trucks/801/801CNGside.png"
+          ],
+          "notes": "This is a CNG truck. Please fill in front or on side."
+        }
+      },
+      "quirks": {
+        "holdBreath": {
+          "name": "Hold Breath",
+          "tags": ["operation"],
+          "explanation": "you have to hold your breath when you start it",
+          "images": ["img/trucks/801/801holdBreath.png"]
+        },
+        "tipper": {
+          "name": "Tipper",
+          "tags": ["operation", "prevention", "safety"],
+          "explanation": "Make sure the latch is fixed on the crossbar before raising the tipper all the way up or you'll end up with a bin in truck.",
+          "images": ["img/trucks/801/801tipperLatch.png"]
+        },
+        "magicWords": {
+          "name": "Magic Words",
+          "tags": ["operation", "truckDamage", "safety"],
+          "explanation": "you have to say the magic words when using the PTO or it will explode",
+          "images": ["img/trucks/801/801magicWords.png"]
+        }
+      }
+      
+    },
+    "box3": {
+      "name": "Box 3",
+      "images": ["img/trucks/801/801main.png"],
+      "usedFor": ["utility"],
+      "description": "a box truck, shorter than box 4, unfolding liftgate from lower",
+      "quirks": {
+        "lockedIgnition": {
+          "name": "Can't turn key",
+          "tags": ["operation"],
+          "explanation": "If you cannot turn the key, jerk the steering wheel rapidly back and forth while turning the key.",
+          "images": ["img/trucks/box3/box3lockedIgnition.png"]
+        }
+      }
+    },
+    "devestator": {
+      "name": "Devestator",
+      "images": ["img/trucks/devestator/devestatormain.png"],
+      "usedFor": ["devestation"],
+      "description": "Coming for you and yo mama.",
+      "quirks": {
+        "destruction": {
+          "name": "Pure Destruction",
+          "tags": ["operation", "safety", "prevention"],
+          "explanation": "If you're not careful, then you'll get destroyed. This thing is not safe.",
+          "images": ["img/trucks/devestator/destruction1.png"]
+        }
+      }
+    }
+  }
+}

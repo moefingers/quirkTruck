@@ -5,13 +5,16 @@ import trucksJSON from "./data/trucks"
 const trucks = trucksJSON.trucks;
 
 
-
+export function stringMatch(string1, string2) {
+  return string1.toLowerCase().replace(/\s+/g, '').includes(string2.toLowerCase().replace(/\s+/g, ''));
+}
 
 
 function App() {
   let [truckQuery, setTruckQuery] = useState("");
 
   let [expandedTruck, setExpandedTruck] = useState("");
+
 
   return (
     <div className="App">
@@ -25,7 +28,7 @@ function App() {
         <div id="truck-cards-container">
 
           {Object.keys(trucks).filter(
-            (queriedTruckKey) => {return trucks[queriedTruckKey].name.toLowerCase().includes(truckQuery)}
+            (queriedTruckKey) => {return stringMatch(trucks[queriedTruckKey].name, truckQuery)}
             ).map((truckKey) => ( 
               <TruckCard
                 key={truckKey}
@@ -46,3 +49,5 @@ function App() {
 }
 
 export default App;
+
+

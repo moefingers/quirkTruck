@@ -1,28 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {stringMatch} from "../../App";
 
 //Using PreTripSection will generate a PreTripSection including all PreTripItems
 
 // lights is done sepereately below because lights is an object with nested objects
 export default function PreTripSection(props) {
+    const { contentsQuery, preTripObject } = props;
+
+    let [sectionTitleMatch, setSectionTitleMatch] = useState(false);
+    let [preTripChildQueryMatch, setPreTripChildQueryMatch] = useState(true);
+
+
+    useEffect(() => {
+        // if "pre trip" contains contents query
+        if (stringMatch("Pre Trip", contentsQuery)) {
+            setSectionTitleMatch(true);
+        } else {
+            setSectionTitleMatch(false);
+        }
+        //initalize found any item bool
+        let foundOne = false
+        // check if any item contains contents query and assigns value to preTripChildQueryMatch
+        // as well as setting that one item is found so the section itself can still render
+        Object.keys(preTripObject).forEach((preTripItemKey) => {
+            const preTripItemName = preTripObject[preTripItemKey].name
+            if (stringMatch(preTripItemName, contentsQuery)) {
+                setPreTripChildQueryMatch(true);
+                foundOne = true
+            } else {
+                setPreTripChildQueryMatch(false);
+            }
+        })
+        if (foundOne) {
+            setPreTripChildQueryMatch(true);
+        }
+    }, [contentsQuery, preTripObject])
     
-    return (
-        <div className="pre-trip-section">
-                <h2>Pre Trip</h2>
-                { // all items except lights
-                    Object.keys(props.preTripObject) // Gets all keys from preTrip
-                    .filter((preTripItemKey) => {return preTripItemKey !== "lights"}) // except lights
-                    .map((preTripItemKey, index) => // generates an item for each one
-                        <PreTripItem key={index} preTripItemObject={props.preTripObject[preTripItemKey]}/> // passes each pretrip item through to PreTripItem to render
-                    )
-                }
-                { // lights
-                    props.preTripObject.lights // if lights is present in pretrip 
-                    ? <LightsSection lightsObject={props.preTripObject.lights} /> // passes lights pretrip item through to Lights to render
-                    : null
-                }
-                    
-        </div>
-    );
+    if (preTripChildQueryMatch || sectionTitleMatch) { // to display the section if either the title or any item contains the query
+        return (
+            <div className="pre-trip-section">
+                    <h2>Pre Trip</h2>
+                    { // all items except lights
+                        Object.keys(preTripObject) // Gets all keys from preTrip
+                        .filter((preTripItemKey) => {return preTripItemKey !== "lights"}) // except lights so they can have special handling later
+                        .filter((preTripItemKey) => {return stringMatch(preTripObject[preTripItemKey].name, contentsQuery)}) // and only items that contain the query
+                        .map((preTripItemKey, index) => // generates an item for each one
+                            <PreTripItem key={index} preTripItemObject={preTripObject[preTripItemKey]}/> // passes each pretrip item through to PreTripItem to render
+                        )
+                    }
+                    { // lights
+                        preTripObject.lights && stringMatch("lights", contentsQuery) // if lights is present in pretrip and contains query
+                        ? <LightsSection lightsObject={preTripObject.lights} /> // passes lights pretrip item through to Lights to render
+                        : null
+                    }
+                        
+            </div>
+        );
+}
 }
 
 // note: this is generally iterated over all items in pretrip item EXCEPT lights.. see Lights.jsx for lights

@@ -39,7 +39,7 @@
     cursor: zoom-in;
    }
 
-#truckCardsContainer {
+#truck-cards-container {
     display: flex;
     flex-wrap: wrap;
     

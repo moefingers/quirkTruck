@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ExpandedContents from "./ExpandedContents";
 
 function TruckCard(props) {
@@ -12,7 +12,7 @@ function TruckCard(props) {
         }
     }
     
-    if(name.toLowerCase().includes(props.truckQuery.toLowerCase())){
+    
         return (
             <div className={"truckCard" + (props.expandedTruck === props.truckKey ? " expanded" : "")}>
                 <h1 className={props.expandedTruck === props.truckKey
@@ -29,7 +29,7 @@ function TruckCard(props) {
                 {props.expandedTruck === props.truckKey ? <ExpandedContents truckKey={props.truckKey} truckObject={props.truckObject} /> : null}
             </div>
         )
-    }
+    
     
 }
 

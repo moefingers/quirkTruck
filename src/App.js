@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TruckCard from "./components/TruckCard";
 import "./css/style1.css";
 import trucksJSON from "./data/trucks"
@@ -22,20 +22,21 @@ function App() {
         <div className="search">
           <input onChange={(e) => setTruckQuery(e.target.value)} type="text" placeholder="Search Trucks..."></input>
         </div>
-        <div id="truckCardsContainer">
+        <div id="truck-cards-container">
 
-          {Object.keys(trucks).map((truckKey) => (
-            <TruckCard
-              key={truckKey}
+          {Object.keys(trucks).filter(
+            (queriedTruckKey) => {return trucks[queriedTruckKey].name.toLowerCase().includes(truckQuery)}
+            ).map((truckKey) => ( 
+              <TruckCard
+                key={truckKey}
 
-              truckQuery={truckQuery}
-              truckKey={truckKey}
+                truckKey={truckKey} // passed again to be accessible as per react guidelines
 
-              expandedTruck={expandedTruck}
-              setExpandedTruck={setExpandedTruck}
+                expandedTruck={expandedTruck}
+                setExpandedTruck={setExpandedTruck}
 
-              truckObject={trucks[truckKey]}
-            />
+                truckObject={trucks[truckKey]}
+              />
           ))}
 
         </div>

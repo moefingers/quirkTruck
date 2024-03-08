@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import PreTripSection from "./Sections/PreTrip";
+import React from "react";
+import PreTripSection from "./TruckCardSections/PreTrip";
 
 
 function ExpandedContents(props) {

@@ -13,10 +13,6 @@ function App() {
 
   let [expandedTruck, setExpandedTruck] = useState("");
 
-  useEffect(() => {
-    console.log(expandedTruck)
-  }, [expandedTruck]);
-
   return (
     <div className="App">
       <header>
@@ -24,23 +20,21 @@ function App() {
       </header>
       <main>
         <div className="search">
-          <input onChange={(e) => setTruckQuery(e.target.value)} type="text" placeholder="Search..."></input>
+          <input onChange={(e) => setTruckQuery(e.target.value)} type="text" placeholder="Search Trucks..."></input>
         </div>
         <div id="truckCardsContainer">
 
           {Object.keys(trucks).map((truckKey) => (
             <TruckCard
-              truckQuery={truckQuery}
               key={truckKey}
+
+              truckQuery={truckQuery}
               truckKey={truckKey}
-              truckObject={trucks[truckKey]}
-              name={trucks[truckKey].name}
-              images={trucks[truckKey].images}
-              description={trucks[truckKey].description}
-              usedFor={trucks[truckKey].usedFor}
 
               expandedTruck={expandedTruck}
               setExpandedTruck={setExpandedTruck}
+
+              truckObject={trucks[truckKey]}
             />
           ))}
 

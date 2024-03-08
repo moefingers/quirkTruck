@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PreTripSection from "./TruckCardSections/PreTrip";
-
+import QuirksSection from "./TruckCardSections/Quirks";
+import PostTrip from "./TruckCardSections/PostTrip";
 
 function ExpandedContents(props) {
 
@@ -10,10 +11,15 @@ function ExpandedContents(props) {
     return (
         <div className="expandedContents">
             <input onChange={(e) => setContentsQuery(e.target.value)} type="text" placeholder={props.truckObject.name + " Search..."}></input>
-            {props.truckObject.preTrip
-                ? <PreTripSection preTripObject={props.truckObject.preTrip}  contentsQuery={contentsQuery}/>
-                : null
-            }
+            {props.truckObject.preTrip ?
+            <PreTripSection preTripObject={props.truckObject.preTrip}  contentsQuery={contentsQuery}/>
+                : null}
+            {props.truckObject.quirks ? 
+            <QuirksSection quirksObject={props.truckObject.quirks} contentsQuery={contentsQuery}/>
+                : null}
+            {props.truckObject.postTrip ?
+            <PostTrip postTripObject={props.truckObject.postTrip} contentsQuery={contentsQuery}/>
+                : null}
         </div>
     );
 }

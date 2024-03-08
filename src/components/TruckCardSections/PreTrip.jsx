@@ -43,7 +43,7 @@ export default function PreTripSection(props) {
                     { // all items except lights
                         Object.keys(preTripObject) // Gets all keys from preTrip
                         .filter((preTripItemKey) => {return preTripItemKey !== "lights"}) // except lights so they can have special handling later
-                        .filter((preTripItemKey) => {return stringMatch(preTripObject[preTripItemKey].name, contentsQuery)}) // and only items that contain the query
+                        .filter((preTripItemKey) => {return stringMatch(preTripObject[preTripItemKey].name, contentsQuery) || sectionTitleMatch}) // and only items that contain the query or all of them if section title matches
                         .map((preTripItemKey, index) => // generates an item for each one
                             <PreTripItem key={index} preTripItemObject={preTripObject[preTripItemKey]}/> // passes each pretrip item through to PreTripItem to render
                         )
@@ -56,7 +56,7 @@ export default function PreTripSection(props) {
                         
             </div>
         );
-}
+    }
 }
 
 // note: this is generally iterated over all items in pretrip item EXCEPT lights.. see Lights.jsx for lights
@@ -70,7 +70,7 @@ function PreTripItem(props) {
           {notes ? <p>Notes: {notes}</p> : null }
           {images // if images are present for item
               ? images.map((image, index) => // make an image tag out of each image url
-                      <img key={index} src={image} />    )
+                      <img key={index} src={image} alt = {name + " image" + index} />    )
               : null
           }
       </div>
@@ -99,7 +99,7 @@ function PreTripItem(props) {
             {notes ? <p>{notes}</p> : null }
             {images // if images are present for item
                 ? images.map((image, index) => // make an image tag out of each image url
-                        <img key={index} src={image} />    )
+                        <img key={index} src={image} alt={name + " image" + index}/>    )
                 : null
             }
         </div>

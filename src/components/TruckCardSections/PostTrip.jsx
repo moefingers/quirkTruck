@@ -30,7 +30,6 @@ export default function PostTripSection(props) {
         if (foundOne) {
             setPostTripChildQueryMatch(true);
         }
-
     }, [contentsQuery, postTripObject])
 
     if (postTripChildQueryMatch || sectionTitleMatch) { // to display the section if either the title or any item contains the query

@@ -12,7 +12,6 @@ export default function QuirksSection(props) {
         if (stringMatch("Quirks", contentsQuery)) {
             setSectionTitleMatch(true);
         } else {
-            
             setSectionTitleMatch(false);
         }
         //initalize found any item bool
@@ -57,9 +56,9 @@ function QuirkItem(props) {
             <h3>{name}</h3>
             {tags ?
             <ul>
-                {tags.includes("operation") ? <li class='quirkTag'>Affects <strong>operation</strong>.</li> : null}
-                {tags.includes("prevention") ? <li class='quirkTag'>Prevents <strong>damage</strong> to equipment.</li> : null}
-                {tags.includes("safety") ? <li class='quirkTag'><strong>Safety Warning</strong></li> : null}
+                {tags.includes("operation") ? <li className='quirkTag'>Affects <strong>operation</strong>.</li> : null}
+                {tags.includes("prevention") ? <li className='quirkTag'>Prevents <strong>damage</strong> to equipment.</li> : null}
+                {tags.includes("safety") ? <li className='quirkTag'><strong>Safety Warning</strong></li> : null}
             </ul> : null}
             {explanation ?
             <p>{explanation}</p> : null}

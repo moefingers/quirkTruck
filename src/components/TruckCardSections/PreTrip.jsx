@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {stringMatch} from "../../App";
-
 //Using PreTripSection will generate a PreTripSection including all PreTripItems
-
 // lights is done sepereately below because lights is an object with nested objects
 export default function PreTripSection(props) {
     const { contentsQuery, preTripObject } = props;
-
     let [sectionTitleMatch, setSectionTitleMatch] = useState(false);
     let [preTripChildQueryMatch, setPreTripChildQueryMatch] = useState(true);
-
-
+    
     useEffect(() => {
         // if "pre trip" contains contents query
         if (stringMatch("Pre Trip", contentsQuery)) {

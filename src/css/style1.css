@@ -10,6 +10,7 @@ body {
 
 .main-title {
     text-align: center;
+    font-size: x-large;
 }
 
 .truckCard h1, .truckTitle {
@@ -19,7 +20,6 @@ body {
     border-radius: 20px;
     
     user-select: none;
-    
 }
 
 .selected-title {
@@ -87,7 +87,7 @@ body {
     vertical-align: baseline;
     color: #fff;
     background-color: #007bff;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 2;
 }
 
@@ -123,9 +123,9 @@ input:active, input:focus {
     outline: none;
     box-shadow: rgba(0, 255, 0, 0.7) 0 0 10px 1px;
 }
-/* p {
-    background: none;
-} */
+p {
+    font-weight: 600;
+}
 
 
 

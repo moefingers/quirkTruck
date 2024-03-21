@@ -136,6 +136,20 @@
           "images": ["img/trucks/devestator/destruction1.png"]
         }
       }
+    },
+    "legoTruck": {
+      "name": "Lego Truck",
+      "images": ["img/trucks/legoTruck/legoTruckMain.png"],
+      "usedFor": ["play-time", "utility"],
+      "description": "We use this truck to play.",
+      "quirks": {
+        "playValue": {
+          "name": "Play Value",
+          "tags": ["operation", "safety", "prevention"],
+          "explanation": "Just saying this truck isn't good for anything other than play time.",
+          "images": ["img/trucks/legoTruck/legoTruckPlayValue.png"]
+        }
+      }
     }
   }
 }

@@ -1,17 +1,26 @@
 * {
     margin: 0;
     padding: 0;
+    /* background: lightblue */
+}
+
+body {
+    background: lightblue
+}
+
+.main-title {
+    text-align: center;
 }
 
 .truckCard h1, .truckTitle {
     text-align: center;
-    background-color: green;
+    background-color: rgb(85, 161, 85);
     padding: 0 2%;
-    border-radius: 20%;
+    border-radius: 20px;
     
     user-select: none;
+    
 }
-
 
 .selected-title {
     outline: solid 3px yellow;
@@ -42,30 +51,35 @@
 #truck-cards-container {
     display: flex;
     flex-wrap: wrap;
-    
+    width: 98%;
+    margin: auto;
 }
 
 .truckCard {
     display: inline-block;
-    border: 1px solid black;
-    width:20%;
-    min-width: 30%;
+    flex-basis: 300px;
+    flex-grow: 1;
     padding: 10px;
-    margin-right: 10px;
-}
-.truckCard:last-child {
-    margin-right: 0;
+    margin: 1%;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
 }
 
 .expanded {
+    flex-basis: 100%;
     width:100%;
+    animation: expand 1s;
 }
 
 .badge {
     list-style-type: none;
     display: inline;
     margin-right: 5px;
-    padding: 2px;
+    padding: 0.2rem .3rem;
     background-color: lightgray;
     border-radius: 10px;
     text-align: center;
@@ -74,6 +88,7 @@
     color: #fff;
     background-color: #007bff;
     font-weight: bold;
+    line-height: 2;
 }
 
 .badge:last-child {
@@ -91,7 +106,26 @@
     display: none;
 }
 
+.search {
+    text-align: center;
+    margin: 20px 0;
+}
+
 input {
     font-size: larger;
     font-weight: bolder;
+    border-radius: 10px;
+    padding: 2px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 10px 1px;
 }
+input:active, input:focus {
+    outline: none;
+    box-shadow: rgba(0, 255, 0, 0.7) 0 0 10px 1px;
+}
+/* p {
+    background: none;
+} */
+
+
+

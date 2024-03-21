@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Click a <span className="truckTitle unselected-title">Title</span> to expand or collapse</h1>
+        <h1 className="main-title">Click a <span className="truckTitle unselected-title">Title</span> to expand or collapse</h1>
       </header>
       <main>
         <div className="search">

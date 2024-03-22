@@ -27,12 +27,15 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
     background: linear-gradient(var(--deg1), rgba(255,150,150,.8), rgba(255,0,0,0) 70.71%),
             linear-gradient(var(--deg2), rgba(150,255,150,.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(var(--deg3), rgba(150,200,150,.8), rgba(0,0,255,0) 70.71%);
             animation: background 5s linear infinite;
+            background-attachment: fixed;
+}
+
+header {
+    padding : 10px 0 0;
 }
 
 .main-title {
@@ -98,8 +101,7 @@ body {
 }
 
 .expanded {
-    flex-basis: 100%;
-    width:100%;
+    flex-basis: 80%;
     animation: expand 1s;
 }
 

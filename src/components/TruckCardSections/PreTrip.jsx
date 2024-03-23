@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {stringMatch} from "../../App";
+
+import { checkImagePresent } from "../../App";
+const imgContext = require.context('../../img', true);
+
 //Using PreTripSection will generate a PreTripSection including all PreTripItems
 // lights is done sepereately below because lights is an object with nested objects
 export default function PreTripSection(props) {
@@ -58,15 +62,19 @@ export default function PreTripSection(props) {
 // note: this is generally iterated over all items in pretrip item EXCEPT lights.. see Lights.jsx for lights
 function PreTripItem(props) {
     const { name, images, type, location, notes } = props.preTripItemObject;
+    
+    let imagesPresent = checkImagePresent(images)
+    
+
     return (
       <div className="pre-trip-item">
         <h3>{name}</h3>
           {type ? <p>Type: {type}</p> : null }
           {location ? <p>Location: {location}</p> : null }
           {notes ? <p>Notes: {notes}</p> : null }
-          {images // if images are present for item
-              ? images.map((image, index) => // make an image tag out of each image url
-                      <img key={index} src={image} alt = {name + " image" + index} />    )
+          {imagesPresent // if images are present for item
+              ?  imagesPresent.map((image, index) => // make an image tag out of each image url
+                      <img className="in-card-image" key={index} src={imgContext(image)} alt = {name + " image" + index} />    )
               : null
           }
       </div>
@@ -79,7 +87,9 @@ function PreTripItem(props) {
         <div className="lights-section">
             <h3>Lights</h3>
             {
-                Object.keys(props.lightsObject).map((lightKey, index) =>{
+                Object.keys(props.lightsObject)
+                .filter((preTripItemKey) => {return preTripItemKey !== "name"})
+                .map((lightKey, index) =>{
                     return <LightsItem lightItemObject={props.lightsObject[lightKey]} key={index} />
                 })
             }
@@ -89,15 +99,20 @@ function PreTripItem(props) {
 
   function LightsItem(props) {
     const { name, images, notes } = props.lightItemObject;
+    
+
+    let imagesPresent = checkImagePresent(images)
+    
     return (
         <div className="lights-item">
             <h4>{name}</h4>
             {notes ? <p>{notes}</p> : null }
-            {images // if images are present for item
-                ? images.map((image, index) => // make an image tag out of each image url
-                        <img key={index} src={image} alt={name + " image" + index}/>    )
+            {imagesPresent // if images are present for item
+                ? imagesPresent.map((image, index) => // make an image tag out of each image url
+                        <img className="in-card-image" key={index} src={imgContext(image)} alt={name + " image" + index}/>    )
                 : null
             }
         </div>
     )
   }
+

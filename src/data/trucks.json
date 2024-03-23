@@ -2,34 +2,34 @@
   "trucks": {
     "801": {
       "name": "801",
-      "images": ["img/trucks/801/801main.png"],
+      "images": [],
       "usedFor": ["glass", "food waste"],
       "description": "a big truck with a side tipper and tail gate + raise bed to dump",
       "preTrip": {
         "oil": {
           "name": "Oil",
-          "images": ["img/trucks/801/801oil.png", "img/trucks/801/801oil2.png"],
+          "images": [],
           "type": "69W-420",
           "location": "description of location, where to fill if it's different than dipstick, and how to open",
           "notes": "do not overfill"
         },
         "transmissionFluid": {
           "name": "Transmission Fluid",
-          "images": ["img/trucks/801/801transmission.png"],
+          "images": [],
           "type": "green monster brand, extra scary type",
           "location": "description of location",
           "notes": "must be checked when transmission system is at full operating temperature."
         },
         "coolant": {
           "name": "Coolant",
-          "images": ["img/trucks/801/801coolant.png"],
+          "images": [],
           "type": "RED YOU MUST USE RED PLEASE ",
           "location": "description of location",
           "notes": "make sure to taste it before filling"
         },
         "tires": {
           "name": "Tires",
-          "images": ["img/trucks/801/801tires.png"],
+          "images": [],
           "ratedPressure": "100psi",
           "notes": "The inner tires can be checked and filled from through the outers"
         },
@@ -37,7 +37,7 @@
           "name": "Lights",
           "frontLights": {
             "name": "Front Lights",
-            "images": ["img/trucks/801/801headLights.png"],
+            "images": [],
             "notes": "high beam, low beam, running light, signals"
           },
           "topLights": {
@@ -50,7 +50,7 @@
           },
           "sideLights": {
             "name": "Side Lights",
-            "images": ["img/trucks/801/801sideLights.png"],
+            "images": [],
             "notes": "type and location, IE side lights found on side"
           },
           "rearLights": {
@@ -98,23 +98,114 @@
           "images": ["img/trucks/801/801magicWords.png"]
         }
       }
-      
     },
     "box3": {
       "name": "Box 3",
-      "images": ["img/trucks/801/801main.png"],
+      "images": ["img/trucks/box3/box3main.webp"],
       "usedFor": ["utility"],
-      "description": "a box truck, shorter than box 4, unfolding liftgate from lower",
+      "description": "Box truck, shorter than box 4 but wider.",
       "preTrip": {
+        "raiseCab": {
+          "name": "Raise Cab",
+          "images": ["./trucks/box3/oil.webp"],
+          "type": "10W-30",
+          "location": "Passenger side when cab is lifted. Search 'Cab Lift' or 'Quirks' for more details.",
+          "notes": "Yellow circle highlights dipstick. Red circle highlights fill port."
+        },
         "oil": {
           "name": "Oil",
-          "images": ["img/trucks/801/801oil.png", "img/trucks/801/801oil2.png"],
-          "type": "69W-420",
-          "location": "description of location, where to fill if it's different than dipstick, and how to open",
-          "notes": "do not overfill"
+          "images": ["./trucks/box3/oil.webp"],
+          "type": "10W-30",
+          "location": "Passenger side when cab is lifted. Search 'Raise Cab' for more details.",
+          "notes": "Yellow circle highlights dipstick. Red circle highlights fill port."
+        },
+        "transmissionFluid": {
+          "name": "Transmission Fluid",
+          "images": ["./trucks/box3/transmissionFluid.webp"],
+          "type": "TBD from Jared",
+          "location": "Passenger side when cab is lifted. Search 'Raise Cab' for more details.",
+          "notes": "Must be checked when transmission system is at full operating temperature, after driving for an hour."
+        },
+        "fuel": {
+          "name": "Fuel",
+          "images": ["./trucks/box3/fuelPort.webp"],
+          "type": "Unleaded (Gasoline)",
+          "location": "On driver side of truck.",
+          "notes": "Sometimes a pump may stop before it is full. Fill more slowly if necessary."
+        },
+        "coolant": {
+          "name": "Coolant",
+          "images": ["./trucks/box3/coolant.webp"],
+          "type": "RED YOU MUST USE RED PLEASE ",
+          "location": "Found on right side of truck between cab and box.",
+          "notes": null
+        },
+        "tires": {
+          "name": "Tires",
+          "images": [
+            "./trucks/box3/tireInner.webp",
+            "./trucks/box3/tireOuter.webp",
+            "./trucks/box3/tire.webp"
+          ],
+          "type": "80psi",
+          "notes": "The inner tires can be checked and filled from through the outers."
+        },
+        "battery": {
+          "name": "Battery",
+          "images": ["./trucks/box3/battery.webp"],
+          "notes": "Check for signs of corrosion around contacts."
+        },
+        "lights": {
+          "name": "Lights",
+          "frontLights": {
+            "name": "Front",
+            "images": ["./trucks/box3/headLight.webp"],
+            "notes": "Headlight / Highbeam in red circle."
+          },
+          "topLights": {
+            "name": "Top",
+            "images": ["./trucks/box3/topFront.webp"],
+            "notes": "DRL. ( 5 ) lights on top of cab, ( 2 ) lights on top corners."
+          },
+          "sideRearTop": {
+            "name": "Side Rear Top",
+            "images": ["./trucks/box3/sideRearTop.webp"],
+            "notes": "On the side, in the top rear corner."
+          },
+          "rearLights": {
+            "name": "Rear",
+            "images": ["./trucks/box3/rear.webp"],
+            "notes": "Shared brake, tail, signal lights. Seperate reverse in white."
+          }
+        }
+      },
+      "postTrip": {
+        "airTanks": {
+          "name": "Air Tanks",
+          "images": ["img/trucks/box3/box3airTanks.png"],
+          "notes": "on colder days, air tanks should be emptied at end of shift by turning valves.."
+        },
+        "CNG": {
+          "name": "CNG",
+          "images": [
+            "img/trucks/box3/box3CNGfront.png",
+            "img/trucks/box3/box3CNGside.png"
+          ],
+          "notes": "This is a CNG truck. Please fill in front or on side."
         }
       },
       "quirks": {
+        "liftGate": {
+          "name": "Lift Gate",
+          "tags": ["operation"],
+          "explanation": "To operate lift gate, it must be turned on. Then after using switch to lower all the way, unfold it, and unfold it again.",
+          "images": [
+            "./trucks/box3/lampAndLiftSwitch.webp",
+            "./trucks/box3/liftGateSwitch.webp",
+            "./trucks/box3/liftGateUnfold1.webp",
+            "./trucks/box3/liftGateUnfold2.webp"
+          ]
+        },
         "lockedIgnition": {
           "name": "Can't turn key",
           "tags": ["operation"],

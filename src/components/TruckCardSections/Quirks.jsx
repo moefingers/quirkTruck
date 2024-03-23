@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {stringMatch} from "../../App";
 
+import { checkImagePresent } from "../../App";
+const imgContext = require.context('../../img', true);
 
 export default function QuirksSection(props) {
     const { contentsQuery, quirksObject } = props;
@@ -51,6 +53,7 @@ export default function QuirksSection(props) {
 
 function QuirkItem(props) {
     const { name, tags, explanation, images} = props.quirkItemObject
+    let imagesPresent = checkImagePresent(images)
     return (
         <div className="quirk-item">
             <h3>{name}</h3>
@@ -62,8 +65,8 @@ function QuirkItem(props) {
             </ul> : null}
             {explanation ?
             <p>{explanation}</p> : null}
-            {images ? images.map((image, index) => 
-            <img key={index} src={image} alt = {name + " image" + index}/>) : null}
+            {imagesPresent ? imagesPresent.map((image, index) => 
+            <img className="in-card-image" key={index} src={imgContext(image)} alt = {name + " image" + index}/>) : null}
         </div>
     );
 }

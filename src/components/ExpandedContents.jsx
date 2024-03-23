@@ -3,6 +3,9 @@ import PreTripSection from "./TruckCardSections/PreTrip";
 import QuirksSection from "./TruckCardSections/Quirks";
 import PostTrip from "./TruckCardSections/PostTrip";
 
+
+// const imgContext = require.context('../img', true);
+
 export default function ExpandedContents(props) {
 
     let [contentsQuery, setContentsQuery] = useState("");

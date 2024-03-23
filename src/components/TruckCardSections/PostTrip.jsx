@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import {stringMatch} from "../../App";
 
+import { checkImagePresent } from "../../App";
+const imgContext = require.context('../../img', true);
 
 export default function PostTripSection(props) {
     const { contentsQuery, postTripObject } = props;
     let [sectionTitleMatch, setSectionTitleMatch] = useState(false);
     let [postTripChildQueryMatch, setPostTripChildQueryMatch] = useState(true);
+
 
     useEffect(() => {
         // if "post trip" contains contents query
@@ -51,12 +54,13 @@ export default function PostTripSection(props) {
 
 function PostTripItem(props) {
     const { name, images, notes } = props.postTripItemObject
+    let imagesPresent = checkImagePresent(images)
     return (
         <div className="post-trip-item">
             <h3>{name}</h3>
             {notes ? <p>{notes}</p> : null}
-            {images ? images.map((image, index) => 
-            <img key={index} src={image} alt = {name + " image" + index}/>) : null}
+            {imagesPresent ? imagesPresent.map((image, index) => 
+            <img key={index} src={imgContext(image)} alt = {name + " image" + index}/>) : null}
         </div>
     );
 }

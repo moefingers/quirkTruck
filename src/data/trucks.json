@@ -177,12 +177,12 @@
           "sideRearTop": {
             "name": "Side Rear Top",
             "images": ["./trucks/box3/sideRearTop.webp"],
-            "notes": "On the side, in the top rear corner."
+            "notes": "On each side, in the top rear corner."
           },
           "rearLights": {
             "name": "Rear",
             "images": ["./trucks/box3/rear.webp"],
-            "notes": "Shared brake, tail, signal lights. Seperate reverse in white."
+            "notes": "Shared brake, tail, signal lights. Seperate reverse in white. ( 5 ) Running lights on top."
           },
           "licenseLight": {
             "name": "License Plate Light",

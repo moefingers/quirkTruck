@@ -107,10 +107,9 @@
       "preTrip": {
         "raiseCab": {
           "name": "Raise Cab",
-          "images": ["./trucks/box3/oil.webp"],
-          "type": "10W-30",
-          "location": "Passenger side when cab is lifted. Search 'Cab Lift' or 'Quirks' for more details.",
-          "notes": "Yellow circle highlights dipstick. Red circle highlights fill port."
+          "images": ["./trucks/box3/raiseCab1.webp","./trucks/box3/raiseCab2.webp"],
+          "location": "Driver side to the right of door.",
+          "notes": "From the first image, pull handle in yellow circle, at the same time pull the handle in the red circle. Then, pull the flat silver handle and use the black handle to raise the cab."
         },
         "oil": {
           "name": "Oil",
@@ -122,7 +121,7 @@
         "transmissionFluid": {
           "name": "Transmission Fluid",
           "images": ["./trucks/box3/transmissionFluid.webp"],
-          "type": "TBD from Jared",
+          "type": "Dexron 6 Transmission Fluid",
           "location": "Passenger side when cab is lifted. Search 'Raise Cab' for more details.",
           "notes": "Must be checked when transmission system is at full operating temperature, after driving for an hour."
         },
@@ -136,7 +135,7 @@
         "coolant": {
           "name": "Coolant",
           "images": ["./trucks/box3/coolant.webp"],
-          "type": "RED YOU MUST USE RED PLEASE ",
+          "type": "RED! YOU MUST USE RED, PLEASE!",
           "location": "Found on right side of truck between cab and box.",
           "notes": null
         },
@@ -153,6 +152,14 @@
         "battery": {
           "name": "Battery",
           "images": ["./trucks/box3/battery.webp"],
+          "type":"Two batteries, group 31. Wired in parallel for 12v system.",
+          "location":"Passenger side, low, to the left of steer axle.",
+          "notes": "Check for signs of corrosion around contacts."
+        },
+        "wiperFluid": {
+          "name": "Wiper Fluid",
+          "images": ["./trucks/box3/wiperFluid.webp"],
+          "location": "Open passenger door. On side of glove box.",
           "notes": "Check for signs of corrosion around contacts."
         },
         "lights": {
@@ -160,7 +167,7 @@
           "frontLights": {
             "name": "Front",
             "images": ["./trucks/box3/headLight.webp"],
-            "notes": "Headlight / Highbeam in red circle."
+            "notes": "Light on the left is a headlight. Both lights on the right are clearance lights, one of which is a turnsignal as well."
           },
           "topLights": {
             "name": "Top",
@@ -176,22 +183,19 @@
             "name": "Rear",
             "images": ["./trucks/box3/rear.webp"],
             "notes": "Shared brake, tail, signal lights. Seperate reverse in white."
+          },
+          "licenseLight": {
+            "name": "License Plate Light",
+            "images": ["./trucks/box3/licenseLight.webp"],
+            "notes": "On the inner edge by the license plate."
           }
         }
       },
       "postTrip": {
         "airTanks": {
-          "name": "Air Tanks",
-          "images": ["img/trucks/box3/box3airTanks.png"],
-          "notes": "on colder days, air tanks should be emptied at end of shift by turning valves.."
-        },
-        "CNG": {
-          "name": "CNG",
-          "images": [
-            "img/trucks/box3/box3CNGfront.png",
-            "img/trucks/box3/box3CNGside.png"
-          ],
-          "notes": "This is a CNG truck. Please fill in front or on side."
+          "name": "An Example",
+          "images": [],
+          "notes": "This is something you should check in your post trip."
         }
       },
       "quirks": {
@@ -210,7 +214,7 @@
           "name": "Can't turn key",
           "tags": ["operation"],
           "explanation": "If you cannot turn the key, jerk the steering wheel rapidly back and forth while turning the key.",
-          "images": ["img/trucks/box3/box3lockedIgnition.png"]
+          "images": ["./trucks/box3/ignition.webp"]
         }
       }
     },

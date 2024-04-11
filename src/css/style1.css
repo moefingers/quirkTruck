@@ -1,21 +1,21 @@
 
 @property --deg1 {
     syntax: '<angle>';
-    initial-value: 217deg;
+    initial-value: 0deg;
     inherits: false;
-}
-
-@property --deg2 {
+  }
+  
+  @property --deg2 {
     syntax: '<angle>';
-    initial-value: 127deg;
+    initial-value: 120deg;
     inherits: false;
-}
-
-@property --deg3 {
+  }
+  
+  @property --deg3 {
     syntax: '<angle>';
-    initial-value: 336deg;
+    initial-value: 240deg;
     inherits: false;
-}
+  }
 
 
 
@@ -28,10 +28,10 @@
 
 body {
     background: linear-gradient(var(--deg1), rgba(255,150,150,.8), rgba(255,0,0,0) 70.71%),
-            linear-gradient(var(--deg2), rgba(150,255,150,.8), rgba(0,255,0,0) 70.71%),
-            linear-gradient(var(--deg3), rgba(150,200,150,.8), rgba(0,0,255,0) 70.71%);
-            animation: background 5s linear infinite;
-            background-attachment: fixed;
+    linear-gradient(var(--deg2), rgba(150,255,150,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(var(--deg3), rgba(150,150,255,.8), rgba(0,0,255,0) 70.71%);
+    animation: background-anim 5s linear infinite;
+    background-attachment: fixed;
 }
 
 header {
@@ -82,7 +82,7 @@ header {
 #truck-cards-container {
     display: flex;
     flex-wrap: wrap;
-    width: 98%;
+    width: 80%;
     margin: auto;
 }
 
@@ -164,18 +164,18 @@ p {
 
 
 
-@keyframes background {
+@keyframes background-anim {
     from {    
-    --deg1: 217deg;
-    --deg2: 127deg;
-    --deg3: 336deg;    
+    --deg1: 0deg;
+    --deg2: 120deg;
+    --deg3: 240deg;    
     }
     to {    
-    --deg1: 577deg;
-    --deg2: 487deg;
-    --deg3: 696deg;    
+    --deg1: 360deg;
+    --deg2: 480deg;
+    --deg3: 600deg;    
     }
-}
+  }
 
 @keyframes selectCard {
     from {background-color: rgba(255, 255, 255, 0.2);}

@@ -222,7 +222,7 @@
       "name": "Devestator",
       "images": ["img/trucks/devestator/devestatormain.png"],
       "usedFor": ["devestation"],
-      "description": "Coming for you and yo mama.",
+      "description": "A really destructive truck.",
       "quirks": {
         "destruction": {
           "name": "Pure Destruction",

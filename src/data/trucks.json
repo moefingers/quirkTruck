@@ -160,7 +160,7 @@
           "name": "Wiper Fluid",
           "images": ["./trucks/box3/wiperFluid.webp"],
           "location": "Open passenger door. On side of glove box.",
-          "notes": "Check for signs of corrosion around contacts."
+          "notes": "Make sure cap is secured after filling."
         },
         "lights": {
           "name": "Lights",

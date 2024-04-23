@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quirkTruck/static/css/main.781f83e3.css",
-    "main.js": "/quirkTruck/static/js/main.042036aa.js",
+    "main.css": "/quirkTruck/static/css/main.9555d64f.css",
+    "main.js": "/quirkTruck/static/js/main.0a748afb.js",
     "static/js/453.e61dcd1c.chunk.js": "/quirkTruck/static/js/453.e61dcd1c.chunk.js",
     "static/media/raiseCab2.webp": "/quirkTruck/static/media/raiseCab2.e9346afe849194476365.webp",
     "static/media/wiperFluid.webp": "/quirkTruck/static/media/wiperFluid.61bc8403eaf3edd19832.webp",
@@ -26,12 +26,12 @@
     "static/media/tire.webp": "/quirkTruck/static/media/tire.86ad2bb5f3d4de918dd0.webp",
     "static/media/sideRearTop.webp": "/quirkTruck/static/media/sideRearTop.ea826c32ac4449cd7b58.webp",
     "index.html": "/quirkTruck/index.html",
-    "main.781f83e3.css.map": "/quirkTruck/static/css/main.781f83e3.css.map",
-    "main.042036aa.js.map": "/quirkTruck/static/js/main.042036aa.js.map",
+    "main.9555d64f.css.map": "/quirkTruck/static/css/main.9555d64f.css.map",
+    "main.0a748afb.js.map": "/quirkTruck/static/js/main.0a748afb.js.map",
     "453.e61dcd1c.chunk.js.map": "/quirkTruck/static/js/453.e61dcd1c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.781f83e3.css",
-    "static/js/main.042036aa.js"
+    "static/css/main.9555d64f.css",
+    "static/js/main.0a748afb.js"
   ]
 }

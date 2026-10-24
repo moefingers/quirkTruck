@@ -5,3 +5,9 @@
 allowBuilds:
   core-js: false
   core-js-pure: false
+# Flat node_modules, laid out as npm laid it out when the museum built this
+# app. webpack names modules and chunks from their node_modules paths, so the
+# default isolated layout renames every emitted JS file; hoisted keeps the
+# build byte-identical to the hosted copy. Packages stay hard-linked from the
+# pnpm store.
+nodeLinker: hoisted

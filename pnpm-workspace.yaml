@@ -1,0 +1,7 @@
+# pnpm settings for this app (pnpm >= 10 reads them from here, not from
+# package.json). Not a multi-package workspace. pnpm >= 11 refuses to install
+# while a dependency's build script is unreviewed; these are all
+# donation-banner postinstalls with no effect on the build, so they stay off.
+allowBuilds:
+  core-js: false
+  core-js-pure: false
